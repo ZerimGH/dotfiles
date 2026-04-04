@@ -37,17 +37,17 @@ TERM = "xterm-256color"
 size = 14.0
 
 [font.bold]
-family = "Sarasa Term K Nerd Font"
+family = "Sarasa Term SC Nerd"
 
 [font.glyph_offset]
 x = 0
 y = 0
 
 [font.italic]
-family = "Sarasa Term K Nerd Font"
+family = "Sarasa Term SC Nerd"
 
 [font.normal]
-family = "Sarasa Term K Nerd Font"
+family = "Sarasa Term SC Nerd"
 
 [font.offset]
 x = 0

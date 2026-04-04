@@ -64,7 +64,7 @@ wait_next
 
 echo "Installing fonts..."
 confirm_run $SUDO pacman -S --needed --noconfirm terminus-font 
-confirm_run $AUR_HELPER -S --needed --noconfirm ttf-siji nerd-fonts-sarasa-term 
+confirm_run $AUR_HELPER -S --needed --noconfirm siji-ttf nerd-fonts-sarasa-term 
 wait_next
 
 echo "Installing scripts and utils..."
