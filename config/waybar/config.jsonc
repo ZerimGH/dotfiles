@@ -5,7 +5,7 @@
   "spacing": 0,
   "modules-left": ["sway/workspaces", "sway/mode", "mpris"],
   "modules-center": ["sway/window"],
-  "modules-right": ["custom/keyboard", "sway/language", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
+  "modules-right": ["sway/language", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -20,8 +20,8 @@
   "mpris": {
     "format": "{player_icon} {title} - {artist}",
     "format-paused": "{status_icon} {title}",
-    
-      "default": "",
+    "player-icons": {
+      "default": ""
     },
     "status-icons": {
       "paused": ""
@@ -60,7 +60,7 @@
       "critical": 10
     },
     "format": "{icon} {capacity}%",
-    "format-charging": "󱐋 {icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
     "format-plugged": " {capacity}%",
     "format-full": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", "", "", "", "", "", ""]
