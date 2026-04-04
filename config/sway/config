@@ -2,7 +2,7 @@ set $mod Mod4
 set $alt Mod1
 
 # Options
-set $kb_layout us
+set $kb_layout gb 
 
 # Default applications
 set $term alacritty
@@ -131,6 +131,7 @@ input "type:touchpad" {
     tap enabled
     pointer_accel 0.125 
     accel_profile "flat"
+    dwt disabled
 }
 
 input "type:keyboard" {
@@ -141,6 +142,8 @@ blur enable
 blur_xray disable
 blur_passes 2
 blur_radius 5
+corner_radius 15
+shadows enable
 
 
 exec_always swaybg -i ~/.config/sway/wallpaper.png -m fill
