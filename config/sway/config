@@ -92,7 +92,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 mode "resize" {
-    bindsym Left resize shrink width 10px
+  bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
@@ -103,7 +103,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "launcher" {
-    bindsym f exec firefox; mode "default"
+  bindsym f exec firefox; mode "default"
     bindsym d exec discord; mode "default"
     bindsym m exec "alacritty --command ncmpcpp"; mode "default"
 
@@ -113,7 +113,7 @@ mode "launcher" {
 bindsym $mod+o mode "launcher"
 
 mode "flauncher" {
-    bindsym f set $$floating_next enable, exec firefox; mode "default"
+  bindsym f set $$floating_next enable, exec firefox; mode "default"
     bindsym d set $$floating_next enable, exec discord; mode "default"
     bindsym m set $$floating_next enable, exec "alacritty --command ncmpcpp"; mode "default"
 
@@ -123,19 +123,19 @@ mode "flauncher" {
 bindsym $mod+Shift+o mode "flauncher"
 
 input "type:pointer" {
-    pointer_accel -0.325
+  pointer_accel -0.325
     accel_profile "flat"
 }
 
 input "type:touchpad" {
-    tap enabled
+  tap enabled
     pointer_accel 0.125 
     accel_profile "flat"
     dwt disabled
 }
 
 input "type:keyboard" {
-    xkb_layout $kb_layout 
+  xkb_layout $kb_layout 
 }
 
 blur enable
