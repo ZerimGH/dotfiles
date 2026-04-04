@@ -21,6 +21,7 @@ client.urgent           #eb4d4b #eb4d4b #ffffff #261f4c #eb4d4b
 # Rules
 for_window [title=".*"] floating $$floating_next, set $$floating_next disable
 for_window [title="Picture-in-Picture"] sticky enable, border none, floating enable
+for_window [title="zenity"] floating enable
 
 default_border pixel 1
 
