@@ -1,6 +1,9 @@
 set $mod Mod4
 set $alt Mod1
 
+# Options
+set $kb_layout us
+
 # Default applications
 set $term alacritty
 set $menu wofi --show run
@@ -21,9 +24,6 @@ for_window [title="Picture-in-Picture"] sticky enable, border none, floating ena
 
 default_border pixel 1
 
-# Wallpaper
-output * bg ~/.config/sway/wallpaper.png fill
-
 # Applications
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return set $$floating_next enable, exec $term
@@ -35,7 +35,7 @@ floating_modifier $mod normal
 
 bindsym $mod+Escape reload
 
-bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+$alt+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 bindsym $mod+q kill
 
@@ -127,11 +127,23 @@ input "type:pointer" {
     accel_profile "flat"
 }
 
+input "type:touchpad" {
+    tap enabled
+    pointer_accel 0.125 
+    accel_profile "flat"
+}
+
+input "type:keyboard" {
+    xkb_layout $kb_layout 
+}
+
 blur enable
 blur_xray disable
 blur_passes 2
 blur_radius 5
 
+
+exec_always swaybg -i ~/.config/sway/wallpaper.png -m fill
 exec waybar
 
 include /etc/sway/config.d/*
