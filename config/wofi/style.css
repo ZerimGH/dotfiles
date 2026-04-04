@@ -1,0 +1,9 @@
+window {
+  background-color: #000000;
+  color: #beafe9;
+}
+
+#entry:selected {
+  background-color: #493f70;
+}
+

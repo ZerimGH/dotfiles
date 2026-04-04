@@ -1,0 +1,69 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 31,
+  "spacing": 0,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["keyboard-state", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+      "6": "6", "7": "7", "8": "8", "9": "9"
+    }
+  },
+
+  "sway/window": {
+    "format": "{}",
+    "max-length": 50,
+    "rewrite": { "": "~" }
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", ""]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": { "default": ["", "", ""] },
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "battery": {
+    "states": { "full": 99 },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-full": " Full",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""]
+  },
+
+  "network": {
+    "interval": 3,
+    "format-wifi": "{icon} {essid}",
+    "format-disconnected": "",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": " {:%I:%M:%S}",
+    "format-alt": " {:%A, %d %b %g}"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  }
+}

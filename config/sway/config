@@ -1,0 +1,137 @@
+set $mod Mod4
+set $alt Mod1
+
+# Default applications
+set $term alacritty
+set $menu wofi --show run
+set $screenshot ~/.config/sway/screenshot.sh
+
+# Initialize the float variable to disable on startup
+set $$floating_next disable
+
+# Border colours
+client.focused          #1F1337 #1F1337 #ffffff #261f4c #1F1337
+client.focused_inactive #2F2347 #2F2347 #ffffff #261f4c #2F2347
+client.unfocused        #141218 #141218 #888888 #261f4c #141218
+client.urgent           #eb4d4b #eb4d4b #ffffff #261f4c #eb4d4b
+
+# Rules
+for_window [title=".*"] floating $$floating_next, set $$floating_next disable
+for_window [title="Picture-in-Picture"] sticky enable, border none, floating enable
+
+default_border pixel 1
+
+# Wallpaper
+output * bg ~/.config/sway/wallpaper.png fill
+
+# Applications
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return set $$floating_next enable, exec $term
+
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+s exec $screenshot
+
+floating_modifier $mod normal
+
+bindsym $mod+Escape reload
+
+bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+bindsym $mod+q kill
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+f fullscreen
+bindsym $mod+$alt+space floating toggle
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+mode "resize" {
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+mode "launcher" {
+    bindsym f exec firefox; mode "default"
+    bindsym d exec discord; mode "default"
+    bindsym m exec "alacritty --command ncmpcpp"; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+o mode "launcher"
+
+mode "flauncher" {
+    bindsym f set $$floating_next enable, exec firefox; mode "default"
+    bindsym d set $$floating_next enable, exec discord; mode "default"
+    bindsym m set $$floating_next enable, exec "alacritty --command ncmpcpp"; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+o mode "flauncher"
+
+input "type:pointer" {
+    pointer_accel -0.325
+    accel_profile "flat"
+}
+
+blur enable
+blur_xray disable
+blur_passes 2
+blur_radius 5
+
+exec waybar
+
+include /etc/sway/config.d/*

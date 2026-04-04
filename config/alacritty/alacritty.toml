@@ -1,0 +1,87 @@
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.normal]
+black   = "0x2a1f33"  
+red     = "0x5a2a7a"  
+green   = "0x6b3a8f"  
+yellow  = "0x7c4fa3"  
+blue    = "0x8a63b8"  
+magenta = "0x9d7bd0"  
+cyan    = "0xae93e3"  
+white   = "0xbeafe9"  
+
+[colors.bright]
+black   = "0x3a2c46"  
+red     = "0x7440a0"  
+green   = "0x8554b5"  
+yellow  = "0x9669c9"  
+blue    = "0xa77ede"  
+magenta = "0xb895f0"  
+cyan    = "0xcaaeff"  
+white   = "0xe6dcff"  
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xbeafe9"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Sarasa Term K Nerd Font"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Sarasa Term K Nerd Font"
+
+[font.normal]
+family = "Sarasa Term K Nerd Font"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = false
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.style]
+# blink_interval = 750
+# blinking = "On"
+# shape = "Beam"
+
+# [mouse.triple_click]
+# threshold = 300
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[window]
+opacity = 0.8 
+decorations = "none"
+dynamic_padding = false 
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 100
+lines = 25
+
+[window.padding]
+x = 5
+y = 5
