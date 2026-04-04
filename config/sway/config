@@ -21,7 +21,21 @@ client.urgent           #eb4d4b #eb4d4b #ffffff #261f4c #eb4d4b
 # Rules
 for_window [title=".*"] floating $$floating_next, set $$floating_next disable
 for_window [title="Picture-in-Picture"] sticky enable, border none, floating enable
+for_window [window_role="pop-up"] floating enable
+
 for_window [title="zenity"] floating enable
+
+for_window [app_id="xdg-desktop-portal-gtk"] floating enable
+for_window [app_id="xdg-desktop-portal-kde"] floating enable
+for_window [app_id="xdg-desktop-portal-wlr"] floating enable
+
+for_window [window_role="GtkFileChooserDialog"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+for_window [title="Save File"] floating enable
+for_window [title="Open File"] floating enable
 
 default_border pixel 1
 
@@ -35,6 +49,7 @@ bindsym $mod+Shift+s exec $screenshot
 floating_modifier $mod normal
 
 bindsym $mod+Escape reload
+bindsym $mod+Shift+Escape exec "killall waybar; waybar" 
 
 bindsym $mod+$alt+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
