@@ -5,7 +5,7 @@
   "spacing": 0,
   "modules-left": ["sway/workspaces", "sway/mode", "mpris"],
   "modules-center": ["sway/window"],
-  "modules-right": ["keyboard-state", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
+  "modules-right": ["custom/keyboard", "sway/language", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -20,7 +20,7 @@
   "mpris": {
     "format": "{player_icon} {title} - {artist}",
     "format-paused": "{status_icon} {title}",
-    "player-icons": {
+    
       "default": "",
     },
     "status-icons": {
