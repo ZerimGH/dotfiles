@@ -70,7 +70,7 @@ wait_next
 echo "Installing scripts and utils..."
 confirm_run $SUDO pacman -S --needed --noconfirm sway-contrib swaybg
 confirm_run $SUDO pacman -S --needed --noconfirm zenity
-confirm_run $SUDO pacman -S --needed --noconfirm pactl brightnessctl playerctl
+confirm_run $SUDO pacman -S --needed --noconfirm libpulse brightnessctl playerctl
 wait_next
 
 echo "Installing environment applications..."
