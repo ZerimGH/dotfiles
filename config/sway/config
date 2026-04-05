@@ -100,6 +100,10 @@ bindsym $mod+$alt+space floating toggle
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+bindsym $mod+Shift+space exec playerctl play-pause
+bindsym $mod+Shift+period exec playerctl next; exec playerctl pause; exec playerctl play 
+bindsym $mod+Shift+comma exec playerctl previous; exec playerctl pause; exec playerctl play  
+
 bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
