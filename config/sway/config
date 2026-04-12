@@ -2,7 +2,7 @@ set $mod Mod4
 set $alt Mod1
 
 # Options
-set $kb_layout gb 
+set $kb_layouts "gb,us" 
 
 # Default applications
 set $term alacritty
@@ -33,6 +33,7 @@ for_window [window_role="GtkFileChooserDialog"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [window_role="dialog"] floating enable
 
 for_window [title="Save File"] floating enable
 for_window [title="Open File"] floating enable
@@ -156,7 +157,8 @@ input "type:touchpad" {
 }
 
 input "type:keyboard" {
-  xkb_layout $kb_layout 
+  xkb_layout $kb_layouts 
+  xkb_options "grp:win_space_toggle"
 }
 
 blur enable
