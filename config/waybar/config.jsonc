@@ -5,7 +5,7 @@
   "spacing": 0,
   "modules-left": ["sway/workspaces", "sway/mode", "mpris"],
   "modules-center": ["sway/window"],
-  "modules-right": ["sway/language", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
+  "modules-right": ["sway/language", "memory", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "tray"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -33,6 +33,12 @@
     "format": "{}",
     "max-length": 50,
     "rewrite": { "": "~" }
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": " {used} GiB",
+    "max-length": 10
   },
 
   "cpu": {
@@ -70,7 +76,7 @@
     "interval": 3,
     "format-wifi": "{icon} {essid}",
     "format-disconnected": "",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": ["", "", "", "", ""]
   },
 
   "clock": {
