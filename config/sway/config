@@ -46,14 +46,14 @@ bindsym $mod+Shift+Return set $$floating_next enable, exec $term
 
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+d set $$floating_next enable, exec $menu
-bindsym $mod+Shift+s exec $screenshot
+bindsym Print exec $screenshot
 
 floating_modifier $mod normal
 
 bindsym $mod+Escape reload
 bindsym $mod+Shift+Escape exec "killall waybar; waybar" 
 
-bindsym $mod+$alt+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+$alt+x exit 
 
 bindsym $mod+q kill
 
@@ -97,6 +97,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
+bindsym $mod+$alt+s sticky toggle 
 bindsym $mod+$alt+space floating toggle
 
 bindsym $mod+Shift+minus move scratchpad

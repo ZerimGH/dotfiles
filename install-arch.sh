@@ -54,32 +54,40 @@ echo "Using $SUDO for privilege escalation"
 wait_next
 
 # Install packages 
-echo "Installing waybar..."
-confirm_run $SUDO pacman -S --needed --noconfirm waybar
-wait_next
 
 echo "Installing swayfx window manager..."
-confirm_run $AUR_HELPER -S --needed --noconfirm swayfx 
+confirm_run $AUR_HELPER -S --needed --noconfirm swayfx # Window manager (sway with transparency support)
+wait_next
+
+echo "Installing waybar..."
+confirm_run $SUDO pacman -S --needed --noconfirm waybar # Bar application 
 wait_next
 
 echo "Installing fonts..."
-confirm_run $SUDO pacman -S --needed --noconfirm terminus-font 
-confirm_run $AUR_HELPER -S --needed --noconfirm siji-ttf nerd-fonts-sarasa-term 
+confirm_run $SUDO pacman -S --needed --noconfirm terminus-font # Waybar text font
+confirm_run $AUR_HELPER -S --needed --noconfirm siji-ttf nerd-fonts-sarasa-term # Waybar icons and terminal font
+wait_next
+
+echo "Installing gtk theme..."
+confirm_run $SUDO pacman -S --needed --noconfirm gnome-themes-extra # Installs the adwaita-dark theme
 wait_next
 
 echo "Installing scripts and utils..."
-confirm_run $SUDO pacman -S --needed --noconfirm sway-contrib swaybg
-confirm_run $SUDO pacman -S --needed --noconfirm zenity
-confirm_run $SUDO pacman -S --needed --noconfirm libpulse brightnessctl playerctl
+confirm_run $SUDO pacman -S --needed --noconfirm sway-contrib swaybg # For screenshot tools
+confirm_run $SUDO pacman -S --needed --noconfirm zenity # For file save dialogue with screenshot
+confirm_run $SUDO pacman -S --needed --noconfirm libpulse brightnessctl playerctl # For controlling audio, brightness, music / videos
 wait_next
 
 echo "Installing environment applications..."
-confirm_run $SUDO pacman -S --needed --noconfirm wofi 
-confirm_run $SUDO pacman -S --needed --noconfirm swaync 
+confirm_run $SUDO pacman -S --needed --noconfirm wofi # For running applications by name search 
+confirm_run $SUDO pacman -S --needed --noconfirm swaync # For notifications
 wait_next
 
 echo "Installing optional applications..."
-confirm_run $SUDO pacman -S --needed --noconfirm alacritty firefox vim
+confirm_run $SUDO pacman -S --needed --noconfirm alacritty firefox vim # General applications
+confirm_run $SUDO pacman -S --needed --noconfirm ncmpcpp mpd # For playing local music
+confirm_run $AUR_HELPER -S --needed --noconfirm mpDris2 mprisence # For music info in mpris and discord status
+confirm_run systemctl --user enable mpd mpDris2 mprisence # Automatically start music stuff on login
 wait_next
 
 # Copy configs
