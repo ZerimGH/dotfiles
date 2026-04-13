@@ -81,6 +81,7 @@ wait_next
 echo "Installing environment applications..."
 confirm_run $SUDO pacman -S --needed --noconfirm wofi # For running applications by name search 
 confirm_run $SUDO pacman -S --needed --noconfirm swaync # For notifications
+confirm_run systemctl --user enable swaync # Automatically start notification daemon on login 
 wait_next
 
 echo "Installing optional applications..."
