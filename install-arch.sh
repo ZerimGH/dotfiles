@@ -75,6 +75,7 @@ wait_next
 
 echo "Installing environment applications..."
 confirm_run $SUDO pacman -S --needed --noconfirm wofi 
+confirm_run $SUDO pacman -S --needed --noconfirm swaync 
 wait_next
 
 echo "Installing optional applications..."

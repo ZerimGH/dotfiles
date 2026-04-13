@@ -112,6 +112,8 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ to
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 mode "resize" {
   bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
@@ -171,5 +173,6 @@ shadows enable
 
 exec_always swaybg -i ~/.config/sway/wallpaper.png -m fill
 exec waybar
+exec swaync
 
 include /etc/sway/config.d/*
