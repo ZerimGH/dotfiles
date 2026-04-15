@@ -38,7 +38,7 @@
   "memory": {
     "interval": 1,
     "format": " {used} GiB",
-    "max-length": 10
+    "max-length": 12
   },
 
   "cpu": {
