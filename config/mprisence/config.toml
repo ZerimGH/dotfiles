@@ -21,10 +21,7 @@ file_names = ["cover", "folder", "front", "album", "art"]
 local_search_depth = 2
 
 [cover.provider]
-provider = ["musicbrainz", "catbox"]
-
-[cover.provider.imgbb]
-expiration = 86400
+provider = ["catbox", "musicbrainz"]
 
 [cover.provider.catbox]
 use_litter = false
@@ -32,6 +29,9 @@ litter_hours = 24
 
 [cover.provider.musicbrainz]
 min_score = 100
+
+[cover.provider.imgbb]
+expiration = 86400
 
 [player]
 # Priority: user entries override bundled ones. Fields left unset in a higher-priority entry fall back to lower matches, then [player.default], then built-in defaults. If identity and bus-name differ, an exact user bus-name entry wins.
