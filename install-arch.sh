@@ -65,7 +65,7 @@ wait_next
 
 echo "Installing fonts..."
 confirm_run $SUDO pacman -S --needed --noconfirm terminus-font # Waybar text font
-confirm_run $AUR_HELPER -S --needed --noconfirm siji-ttf nerd-fonts-sarasa-term # Waybar icons and terminal font
+confirm_run $AUR_HELPER -S --needed --noconfirm siji-ttf otf-apple-sf-mono # Waybar icons and terminal font
 wait_next
 
 echo "Installing gtk theme..."
@@ -79,7 +79,7 @@ confirm_run $SUDO pacman -S --needed --noconfirm libpulse brightnessctl playerct
 wait_next
 
 echo "Installing environment applications..."
-confirm_run $SUDO pacman -S --needed --noconfirm wofi # For running applications by name search 
+confirm_run $SUDO pacman -S --needed --noconfirm rofi # For running applications by name search 
 confirm_run $SUDO pacman -S --needed --noconfirm swaync # For notifications
 confirm_run systemctl --user enable swaync # Automatically start notification daemon on login 
 wait_next

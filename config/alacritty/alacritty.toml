@@ -37,17 +37,17 @@ TERM = "xterm-256color"
 size = 14.0
 
 [font.bold]
-family = "Sarasa Term SC Nerd"
+family = "SF Mono"
 
 [font.glyph_offset]
 x = 0
 y = 0
 
 [font.italic]
-family = "Sarasa Term SC Nerd"
+family = "SF Mono"
 
 [font.normal]
-family = "Sarasa Term SC Nerd"
+family = "SF Mono"
 
 [font.offset]
 x = 0
@@ -79,7 +79,7 @@ startup_mode = "Windowed"
 title = "Alacritty"
 
 [window.dimensions]
-columns = 100
+columns = 80
 lines = 25
 
 [window.padding]

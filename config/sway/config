@@ -6,7 +6,7 @@ set $kb_layouts "gb,us"
 
 # Default applications
 set $term alacritty
-set $menu wofi --show run
+set $menu rofi -show drun
 set $screenshot ~/.config/sway/screenshot.sh
 
 # Initialize the float variable to disable on startup
@@ -18,25 +18,30 @@ client.focused_inactive #2F2347 #2F2347 #ffffff #261f4c #2F2347
 client.unfocused        #141218 #141218 #888888 #261f4c #141218
 client.urgent           #eb4d4b #eb4d4b #ffffff #261f4c #eb4d4b
 
-# Rules
+
 for_window [title=".*"] floating $$floating_next, set $$floating_next disable
-for_window [title="Picture-in-Picture"] sticky enable, border none, floating enable
-for_window [window_role="pop-up"] floating enable
-
-for_window [title="zenity"] floating enable
-
 for_window [app_id="xdg-desktop-portal-gtk"] floating enable
-for_window [app_id="xdg-desktop-portal-kde"] floating enable
-for_window [app_id="xdg-desktop-portal-wlr"] floating enable
+for_window [app_id="pop-up"]                     floating enable
+for_window [app_id="bubble"]                     floating enable 
+for_window [app_id="task_dialog"]                floating enable
+for_window [app_id="Preferences"]                floating enable
+for_window [app_id="dialog"]                     floating enable 
+for_window [app_id="menu"]                       floating enable
+for_window [app_id="Organizer"]                  floating enable
+for_window [app_id="About"]                      floating enable
+for_window [app_id="toolbox"]                    floating enable
+for_window [app_id="page-info"]                  floating enable	
+for_window [app_id="webconsole"]                 floating enable
+for_window [app_id="Authy"]                      floating enable
+for_window [app_id="termfloat"]                  floating enable
+for_window [app_id="termfloat"]                  resize set height 540
+for_window [app_id="termfloat"]                  resize set width 960
+for_window [app_id="mpv"]                        floating enable 
+for_window [app_id="mpv"]                        resize set height 540
+for_window [app_id="mpv"]                        resize set width 960
+for_window [app_id="thunar"]                   floating enable 
+for_window [app_id="prismlauncher"]            floating enable 
 
-for_window [window_role="GtkFileChooserDialog"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-for_window [window_role="dialog"] floating enable
-
-for_window [title="Save File"] floating enable
-for_window [title="Open File"] floating enable
 
 default_border pixel 1
 
