@@ -20,7 +20,7 @@ set $kb_layouts "gb,us"
 set $term alacritty
 set $menu rofi -show drun
 set $screenshot ~/.config/sway/screenshot.sh
-set $lock 'veila lock'
+set $lock veila lock
 
 # Initialize the float variable to disable on startup
 set $$floating_next disable
@@ -199,5 +199,7 @@ exec_always swaybg -i ~/.config/sway/wallpaper.png -m fill
 exec waybar
 exec swaync
 exec_always autotiling
+exec systemctl --user restart veilad  # Not sure why I have to do this, veila needs a restart after
+                                      # starting sway to work correctly
 
 include /etc/sway/config.d/*
