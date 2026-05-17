@@ -81,7 +81,9 @@ wait_next
 echo "Installing environment applications..."
 confirm_run $SUDO pacman -S --needed --noconfirm rofi # For running applications by name search 
 confirm_run $SUDO pacman -S --needed --noconfirm swaync # For notifications
+confirm_run $AUR_HELPER -S --needed --noconfirm veila-bin # For lockscreen
 confirm_run systemctl --user enable swaync # Automatically start notification daemon on login 
+confirm_run systemctl --user enable veilad # Automatically start lockscreen daemon on login 
 wait_next
 
 echo "Installing optional applications..."
