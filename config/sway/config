@@ -199,7 +199,9 @@ exec_always swaybg -i ~/.config/sway/wallpaper.png -m fill
 exec waybar
 exec swaync
 exec_always autotiling
+exec wl-clip-persist --clipboard regular
 exec systemctl --user restart veilad  # Not sure why I have to do this, veila needs a restart after
                                       # starting sway to work correctly
 
 include /etc/sway/config.d/*
+
