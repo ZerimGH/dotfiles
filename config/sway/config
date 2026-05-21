@@ -55,6 +55,7 @@ for_window [app_id="mpv"]                        resize set width 960
 for_window [app_id="thunar"]                    floating enable 
 for_window [app_id="prismlauncher"]             floating enable 
 for_window [title="QEMU"]                       floating enable 
+for_window [title="Picture-in-Picture"]         floating enable, sticky enable
 
 
 default_border pixel 1
