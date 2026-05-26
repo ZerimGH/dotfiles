@@ -77,6 +77,7 @@ confirm_run $SUDO pacman -S --needed --noconfirm sway-contrib swaybg # For scree
 confirm_run $SUDO pacman -S --needed --noconfirm zenity # For file save dialogue with screenshot
 confirm_run $SUDO pacman -S --needed --noconfirm libpulse brightnessctl playerctl # For controlling audio, brightness, music / videos
 confirm_run $AUR_HELPER -S --neeeded --noconfirm wl-clip-persist # For persistent clipboard
+confirm_run $AUR_HELPER -S --neeeded --noconfirm autotiling # For autotiling 
 wait_next
 
 echo "Installing environment applications..."
