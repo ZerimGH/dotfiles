@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 read -p "Do you want to confirm each command? (Y/n): " input
 
 if [[ "$input" =~ ^[nN]$ ]]; then
