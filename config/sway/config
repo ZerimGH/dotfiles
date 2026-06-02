@@ -65,7 +65,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return set $$floating_next enable, exec $term
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+d set $$floating_next enable, exec $menu
-bindsym Print exec $screenshot
+bindsym $mod+Shift+s exec $screenshot
 
 floating_modifier $mod normal
 
@@ -185,7 +185,7 @@ input "type:touchpad" {
 
 input "type:keyboard" {
   xkb_layout $kb_layouts 
-  xkb_options grp:rctrl_toggle
+  xkb_options grp:ralt_rshift_toggle
 }
 
 blur enable

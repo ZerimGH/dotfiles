@@ -2,14 +2,15 @@
 
 TEMP_FILE=$(mktemp /tmp/screenshot_XXXXXX.png)
 
-grimshot savecopy anything "$TEMP_FILE"
+SAVED=$(grimshot savecopy anything "$TEMP_FILE")
 
-mkdir -p "$HOME/Pictures/Screenshots"
-FILE_NAME="$HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H_%M_%S).png"
-TARGET_FILE=$(zenity --file-selection --save --filename="$FILE_NAME")
-
-if [ -n "$TARGET_FILE" ]; then
-  mv "$TEMP_FILE" "$TARGET_FILE"
+if [ $SAVED != "" ]; then
+    mkdir -p "$HOME/Pictures/Screenshots"
+    FILE_NAME="$HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H_%M_%S).png"
+    TARGET_FILE=$(zenity --file-selection --save --filename="$FILE_NAME")
+    mv "$SAVED" "$TARGET_FILE"
 else
-  rm -f "$TEMP_FILE"
+    rm -f "$TEMP_FILE"
 fi
+
+
